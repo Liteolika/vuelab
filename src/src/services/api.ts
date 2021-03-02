@@ -3,7 +3,7 @@ export class ApiThings {
     return new Promise<string[]>((res) => {
       setTimeout(() => {
         res(["hej", "peter"]);
-      }, 2000);
+      }, 3000);
     });
   };
 }

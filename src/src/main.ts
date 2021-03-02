@@ -4,7 +4,16 @@ import "./registerServiceWorker";
 import router from "./router";
 import { rootstore } from "@/store";
 
-createApp(App)
-  .use(rootstore)
-  .use(router)
-  .mount("#app");
+import init from "./initializer";
+
+init().then(() => {
+
+  createApp(App)
+    .use(rootstore)
+    .use(router)
+    .mount("#app");
+
+});
+
+
+

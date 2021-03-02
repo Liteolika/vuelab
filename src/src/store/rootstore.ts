@@ -14,18 +14,10 @@ const vuexLocalStore: VuexPersistence<any> = new VuexPersistence({
 });
 
 const store: Store<any> = createStore({
-  plugins: [vuexLocalStore.plugin, createLogger()],
+  plugins: [
+    vuexLocalStore.plugin,
+    //createLogger()
+  ],
 });
-
-// export function awaitStateInit(): Promise<void> {
-//   return new Promise<void>((resolve) => {
-//     while (store.state === null) {
-//       setTimeout(() => {
-//         // just wait
-//       }, 50);
-//     }
-//     resolve();
-//   });
-// }
 
 export default store;

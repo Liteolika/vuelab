@@ -7,16 +7,14 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted } from "vue";
+import { computed, defineComponent } from "vue";
 import astore from "@/store/modules/astore";
 
 export default defineComponent({
   name: "Home",
   setup() {
     const messages = computed(() => astore.messages);
-    onMounted(async () => {
-      await astore.fetchMessages();
-    });
+
     return {
       messages,
     };

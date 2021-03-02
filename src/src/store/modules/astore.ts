@@ -31,6 +31,12 @@ class MessageModule extends VuexModule {
     const messages = await api.getMessages();
     this.context.commit("setMessages", messages);
   }
+
+  @Action
+  async init() {
+    this.context.dispatch("fetchMessages");
+  }
+
 }
 
 export default getModule(MessageModule);
